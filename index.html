@@ -85,6 +85,10 @@
     .step h2 {
       color: #34495e;
       margin-bottom: 10px;
+      font-size: 1.3em;
+      line-height: 1.4;
+      word-break: break-word;
+      text-align: left;
     }
 
     .step p {
@@ -104,35 +108,36 @@
       font-size: 0.9em;
     }
 
-  .itch-button {
-    display: inline-flex;
-    align-items: center;
-    background-color: #fa5c5c;
-    color: white;
-    padding: 12px 20px;
-    font-weight: bold;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    gap: 10px;
-    font-size: 1rem;
-    margin-top: 15px;
-}
+    .itch-button {
+      display: inline-flex;
+      align-items: center;
+      background-color: #fa5c5c;
+      color: white;
+      padding: 12px 20px;
+      font-weight: bold;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      gap: 10px;
+      font-size: 1rem;
+      margin-top: 15px;
+    }
 
-  .itch-button img {
-    width: 24px;
-    height: 24px;
-    object-fit: contain;
-    display: inline-block;
-
-}
-
+    .itch-button img {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+      display: inline-block;
+    }
 
     .itch-button:hover {
       background-color: #e04a4a;
       transform: translateY(-2px);
     }
 
+    .center-button {
+      text-align: center;
+    }
 
     @media (max-width: 600px) {
       header img {
@@ -145,6 +150,10 @@
 
       h1 {
         font-size: 1.6em;
+      }
+
+      .step h2 {
+        font-size: 1.1em;
       }
     }
   </style>
@@ -160,17 +169,18 @@
   <main>
     <h1>Augmented Reality Rooms</h1>
     <p class="intro">📱 This is only available for Android</p>
-    <p class="notice">Before you Proceed and Click to Step 1, make sure to read all of the Steps,<br>Thank you for Trying This App!</p>
+    <p class="notice">Before you proceed and click Step 1, make sure to read all of the steps.<br>Thank you for trying this app!</p>
 
-  <!-- Step 1 -->
-  <div class="step" style="text-align: center;">
-    <h2>Step 1: Click the button below to visit the download page</h2>
-    <a href="https://d3nzlvn.itch.io/ar-demo" target="_blank" class="itch-button">
-      <img src="Web/itch.png" alt="Itch.io Icon">
-      Visit on Itch.io
-    </a>
-  </div>
-
+    <!-- Step 1 -->
+    <div class="step">
+      <h2>Step 1: Click the button below to visit the download page</h2>
+      <div class="center-button">
+        <a href="https://d3nzlvn.itch.io/ar-demo" target="_blank" class="itch-button">
+          <img src="Web/itch.png" alt="Itch.io Icon">
+          Visit on Itch.io
+        </a>
+      </div>
+    </div>
 
     <!-- Step 2 -->
     <div class="step">
