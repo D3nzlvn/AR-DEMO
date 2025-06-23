@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Augmented Reality Rooms</title>
   <style>
-    /* Reset + Base */
     * {
       margin: 0;
       padding: 0;
@@ -24,7 +23,6 @@
       color: inherit;
     }
 
-    /* Navigation Bar */
     header {
       background: #ffffff;
       padding: 15px 30px;
@@ -40,7 +38,6 @@
       height: 70px;
     }
 
-    /* Main Content */
     main {
       max-width: 900px;
       margin: 40px auto;
@@ -121,6 +118,13 @@
       gap: 10px;
       font-size: 1rem;
       margin-top: 15px;
+      pointer-events: none;
+      opacity: 0.5;
+    }
+
+    .itch-button.enabled {
+      pointer-events: auto;
+      opacity: 1;
     }
 
     .itch-button img {
@@ -160,12 +164,10 @@
 </head>
 <body>
 
-  <!-- Navigation -->
   <header>
     <img src="Web/mega.png" alt="App Logo">
   </header>
 
-  <!-- Main Content -->
   <main>
     <h1>Augmented Reality Rooms</h1>
     <p class="intro">📱 This is only available for Android</p>
@@ -174,8 +176,11 @@
     <!-- Step 1 -->
     <div class="step">
       <h2>Step 1: Click the button below to visit the download page</h2>
+      <p id="unlockReminder" style="color: #c0392b; font-size: 0.95em; margin-bottom: 10px;">
+        🔒 Please scroll through and read all instructions to unlock the download button.
+      </p>
       <div class="center-button">
-        <a href="https://d3nzlvn.itch.io/ar-demo" target="_blank" class="itch-button">
+        <a id="downloadButton" href="https://d3nzlvn.itch.io/ar-demo" target="_blank" class="itch-button">
           <img src="Web/itch.png" alt="Itch.io Icon">
           Click Me!
         </a>
@@ -187,8 +192,7 @@
       <h2>Step 2: Click the <strong>Correct Download</strong> button</h2>
       <p>Make sure to download the file named <code>ROOM_DSA_AR.apk</code></p>
       <img src="Web/step2.png" alt="Download instruction screenshot">
-      <br>
-      <br>
+      <br><br>
       <p>Ignore this <strong>A downloadable game for Android</strong></p>
       <img src="Web/step2part1.png" alt="Download instruction screenshot">
     </div>
@@ -202,15 +206,33 @@
 
     <!-- Step 4 -->
     <div class="step">
-      <h2>Step 4: You're safe!</h2>
+      <h2>Step 4: Disable Auto Blocker</h2>
+      <p>If you're using a Samsung device, make sure to disable the Auto Blocker in order to install the app. Once it's installed, you can turn the Auto Blocker back on.</p>
+      <p>To disable Samsung's Auto Blocker, go to <strong>Settings > Security and privacy > Auto Blocker</strong> and toggle it off.</p>    </div>
+
+    <!-- Step 5 -->
+    <div class="step">
+      <h2>Step 5: You're safe!</h2>
       <p>This application was created by a DSA Intern. It is safe to use and intended for educational and prototype purposes.</p>
       <img src="Web/apppreview.jpg" alt="App security or preview">
     </div>
   </main>
 
-  <!-- Footer -->
   <footer>
     &copy; Denzel Van Torres - DSA Intern.
   </footer>
+
+  <script>
+    const button = document.getElementById("downloadButton");
+    const reminder = document.getElementById("unlockReminder");
+
+    window.addEventListener("scroll", () => {
+      if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 5) {
+        button.classList.add("enabled");
+        if (reminder) reminder.style.display = "none";
+      }
+    });
+  </script>
+
 </body>
 </html>
